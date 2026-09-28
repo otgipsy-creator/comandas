@@ -44,7 +44,7 @@ var URL_APP = "https://script.google.com/macros/s/AKfycbzEILRgbSs84rh2Yvdb9dwFsT
                       "de tu web app en <code>URL_APP</code> y volvé a subir el archivo.";
     return;
   }
-  frame.src = URL_APP + (URL_APP.indexOf("?") >= 0 ? "&" : "?") + "app=celular";
+  frame.src = /[?&]app=/.test(URL_APP) ? URL_APP : URL_APP + (URL_APP.indexOf("?") >= 0 ? "&" : "?") + "app=celular";
 })();
 </script>
 </body>
